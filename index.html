@@ -1,482 +1,490 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Main Step: Edit below title -->
-    <title>TODO: Paper Title</title>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nerfies: Deformable Neural Radiance Fields</title>
 
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="" />
-    <meta
-      name="keywords"
-      content="research papers, academic papers, AI research, robotics research, machine learning, published papers, scientific papers, academic journals"
-    />
-    <!-- <meta name="author" content="Research Paper Platform" />
-    <meta name="robots" content="index, follow" />
-    <meta
-      name="robots"
-      content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    /> -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-    <!-- Open Graph Meta Tags (For Social Media Sharing) -->
-    <!-- <meta
-      property="og:title"
-      content="Research Papers - Explore Cutting-Edge Research"
-    />
-    <meta
-      property="og:description"
-      content=""
-    />
-    <meta property="og:image" content="path-to-your-image.jpg" />
-    <meta property="og:url" content="https://www.yourwebsite.com" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Research Paper Platform" /> -->
+    function gtag() {
+      dataLayer.push(arguments);
+    }
 
-    <!-- Twitter Meta Tags (For Twitter Sharing) -->
-    <!-- <meta
-      name="twitter:title"
-      content="Research Papers - Explore Cutting-Edge Research"
-    />
-    <meta
-      name="twitter:description"
-      content=""
-    />
-    <meta name="twitter:image" content="path-to-your-image.jpg" />
-    <meta name="twitter:card" content="summary_large_image" /> -->
+    gtag('js', new Date());
 
-    <!-- Canonical Link -->
-    <!-- <link rel="canonical" href="https://www.yourwebsite.com" /> -->
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
 
-    <!-- Favicon for different platforms -->
-    <link
-      rel="icon"
-      href="Assets/Favicon/icons8-research-color-16.png"
-      sizes="16x16"
-      type="image/png"
-    />
-    <link
-      rel="icon"
-      href="Assets/Favicon/icons8-research-color-32.png"
-      sizes="32x32"
-      type="image/png"
-    />
-    <link
-      rel="icon"
-      href="Assets/Favicon/icons8-research-color-70.png"
-      sizes="70x70"
-      type="image/png"
-    />
-    <link
-      rel="icon"
-      href="Assets/Favicon/icons8-research-color-72.png"
-      sizes="72x72"
-      type="image/png"
-    />
-    <link
-      rel="icon"
-      href="Assets/Favicon/icons8-research-color-96.png"
-      sizes="96x96"
-      type="image/png"
-    />
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="style.css" />
-  </head>
-  <body>
-    <nav class="nav">
-      <a href="#abstract">Abstract</a>
-      <a href="#introduction">Introduction</a>
-      <a href="#methodology">Methodology</a>
-      <a href="#results">Results</a>
-      <a href="#conclusion">Conclusion</a>
-      <button class="toggle-btn" onclick="toggleDarkMode()">
-        Toggle Dark Mode
-      </button>
-    </nav>
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
 
-    <!-- Step 1 Start: Header Part -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
 
-    <!-- 
-    Remove if not applicable
-    Edit below todo text
-    Add URL link by removing # for each authers. Link can be GitHub, LinkedIn, Google Schooler, Website or other
-    -->
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
 
-    <div class="header">
-      <h1>PLATO Hand</h1>
-      <div class="authors">
-        <p>
-          <a href="#">TODO: Author name 1</a><sup>1</sup>,
-          <a href="#">TODO: Author name 2</a><sup>*1,3</sup>,
-          <a href="#">TODO: Author name 3</a><sup>*2</sup>,
-          <a href="#">TODO: Author name 4</a><sup>*1</sup>,
-          <a href="#">TODO: Author name 5</a><sup>2</sup>,
-          <a href="#">TODO: Author name 6</a><sup>1</sup>
-        </p>
-        <p>
-          <sup>1</sup>TODO: University name 1 &nbsp;&nbsp; <sup>2</sup>TODO:
-          University name 2&nbsp;&nbsp; <sup>3</sup>TODO: University name 3
-        </p>
-        <p>
-          <sup>1</sup
-          ><a href="mailto:example1@email.com">TODO:email1@email.com</a>,
-          <sup>2</sup
-          ><a href="mailto:example2@email.com">TODO:email2@email.com</a>
-        </p>
-        <p>
-          <em>*Equal Contribution</em
-          ><!-- Remove if not applicable -->
-        </p>
-        <p>📌 Conference on TODO: Conference name, 2023 (Oral Talk)</p>
-        <p>📌 Presented at TODO: Conference name 2024, Yokohama, Japan.</p>
-      </div>
-    </div>
-
-    <!-- Step 1 End: Header Part -->
-    <!-- Step 2 Start: Button for links -->
-
-    <!-- 
-    Add URL links for each buttons according to name mentioned
-    Remove # and add the link
-    Add new button link if required
-    Remove this step if not applicable
-    -->
-
-    <div class="buttons">
-      <a href="#" target="_blank">Paper</a>
-      <a href="#" target="_blank">Videos</a>
-      <a href="#" target="_blank">Code</a>
-      <a href="#" target="_blank">Dataset</a>
-      <a href="#" target="_blank">Model</a>
-      <a href="#bibtex">BibTex</a>
-    </div>
-
-    <!-- Step 2 End: Button for links -->
-
-    <!-- Step 3 Start: Add your paper abstract -->
-
-    <!-- 
-    Please do not remove below H2 heading tag. Add your HTML code after H2 HTML tag or add text inside P HTML tag. 
-    Remove this step if not applicable
-    -->
-
-    <!-- Single YouTube Video -->
-    <div class="video-section">
-      <h3>Demo Video</h3>
-      <div class="video-container">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/ysFav0b472w?si=Rxxp3R6_tkBXAEmP"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-      </div>
-      <p>
-        TODO: This is the short explanation paragraph of the video. Add your
-        paragraph here if required
-      </p>
-    </div>
-
-    <div class="abstract" id="abstract">
-      <h2>Abstract</h2>
-      <p>TODO: Add Abstract</p>
-    </div>
-
-    <!-- Step 3 End: Add your paper abstract -->
-
-    <!-- Step 4 Start: Add your paper introduction -->
-
-    <!-- 
-    Please do not remove below H2 heading tag. Add your HTML code after H2 HTML tag or add text inside P HTML tag. 
-    Remove this step if not applicable
-    -->
-
-    <div class="content-section" id="introduction">
-      <h2>Introduction</h2>
-      <p>TODO: Add Introduction</p>
-    </div>
-
-    <!-- Step 4 End: Add your paper introduction -->
-
-    <!-- Step 5 Start: Add your paper methodology -->
-
-    <!-- 
-    Please do not remove below H2 heading tag. Add your HTML code after H2 HTML tag or add text inside P HTML tag. 
-    Remove this step if not applicable
-    -->
-
-    <div class="content-section" id="methodology">
-      <h2>Methodology</h2>
-      <p>TODO: Add Methodology</p>
-      <ul>
-        <li>TODO</li>
-        <li>TODO</li>
-      </ul>
-    </div>
-
-    <!-- Step 5 End: Add your paper methodology -->
-
-    <!-- Step 6 Start: Add your paper results -->
-
-    <!-- 
-    Please do not remove below H2 heading tag. Add your HTML code after H2 HTML tag or add text inside P HTML tag. 
-    Remove this step if not applicable
-    Below have pre-build code for:
-    -> 3 Images Carousel
-    -> 3 Videos Carousel
-    -> Single YouTube Video
-    -> YouTube Video List
-    If you do not need those, remove them.
-    How to add YouTube Video:
-    -> Go to the video page
-    -> Click Share Button and Click <> Mark
-    -> This will give <iframe></iframe> tag code
-    -> Replace below <iframe></iframe> tag with your code
-    -->
-
-    <div class="content-section" id="results">
-      <h2>Results</h2>
-      <p>TODO: Add Results</p>
-      <ul>
-        <li>TODO</li>
-        <li>TODO</li>
-      </ul>
-    </div>
-
-    <!-- 3 Images Carousel -->
-    <h3>Image Gallery</h3>
-    <div class="carousel-container" id="imageCarousel">
-      <div class="carousel-track">
-        <div class="carousel-slide">
-          <img src="Assets/Photo1.jpg" alt="Slide 1" />
-        </div>
-        <div class="carousel-slide">
-          <img src="Assets/Photo2.jpg" alt="Slide 2" />
-        </div>
-        <div class="carousel-slide">
-          <img src="Assets/Photo3.jpg" alt="Slide 3" />
-        </div>
-        <div class="carousel-slide">
-          <img src="Assets/Photo4.jpg" alt="Slide 4" />
-        </div>
-        <div class="carousel-slide">
-          <img src="Assets/Photo5.jpg" alt="Slide 5" />
-        </div>
-        <div class="carousel-slide">
-          <img src="Assets/Photo6.jpg" alt="Slide 6" />
-        </div>
-        <div class="carousel-slide">
-          <img src="Assets/Photo7.jpg" alt="Slide 7" />
-        </div>
-        <div class="carousel-slide">
-          <img src="Assets/Photo8.jpg" alt="Slide 8" />
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
         </div>
       </div>
-      <button class="carousel-button prev">←</button>
-      <button class="carousel-button next">→</button>
-      <div class="carousel-indicators"></div>
     </div>
 
-    <!-- 3 Videos Carousel -->
-    <h3>Video Gallery</h3>
-    <div class="carousel-container" id="videoCarousel">
-      <div class="carousel-track">
-        <div class="carousel-slide">
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/Bhg3uOx9ZPw?si=4Ie__ntcTSvRRi4y"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div class="carousel-slide">
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/xjRALKy6Ajw?si=EMrMe_v9fXOjhi_J"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div class="carousel-slide">
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/aaTUS5Aa8F0?si=NUvuwq8-SzC5RuqQ"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div class="carousel-slide">
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/JficcrhnO78?si=8SryP_KFQ0orNyMt"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div class="carousel-slide">
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/kEdr0ARq48A?si=ADLxnzCBkTDQm28o"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div class="carousel-slide">
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/v_ulHMfDUco?si=0fJGN4AmWj_zP-Ik"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Nerfies: Deformable Neural Radiance Fields</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Washington,</span>
+            <span class="author-block"><sup>2</sup>Google Research</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
         </div>
       </div>
-      <button class="carousel-button prev">←</button>
-      <button class="carousel-button next">→</button>
-      <div class="carousel-indicators"></div>
     </div>
+  </div>
+</section>
 
-    <!-- Single YouTube Video -->
-    <div class="video-section">
-      <h3>Demo Video</h3>
-      <div class="video-container">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/ysFav0b472w?si=Rxxp3R6_tkBXAEmP"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
+        free-viewpoint
+        portraits.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/steve.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/chair-tp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/shiba.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/fullbody.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/blueshirt.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mask.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/coffee.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/toby2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- YouTube Video List -->
-    <div class="video-section">
-      <h3>Demo Videos List</h3>
-      <div class="video-container">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/videoseries?si=Alenj7M9_gg7Xv49&amp;list=PL95lT3XlM14SgZHmmKn1mGSAAQc8ycq8v"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We present the first method capable of photorealistically reconstructing a non-rigidly
+            deforming scene using photos/videos captured casually from mobile phones.
+          </p>
+          <p>
+            Our approach augments neural radiance fields
+            (NeRF) by optimizing an
+            additional continuous volumetric deformation field that warps each observed point into a
+            canonical 5D NeRF.
+            We observe that these NeRF-like deformation fields are prone to local minima, and
+            propose a coarse-to-fine optimization method for coordinate-based models that allows for
+            more robust optimization.
+            By adapting principles from geometry processing and physical simulation to NeRF-like
+            models, we propose an elastic regularization of the deformation field that further
+            improves robustness.
+          </p>
+          <p>
+            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
+            photos/videos into deformable NeRF
+            models that allow for photorealistic renderings of the subject from arbitrary
+            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
+            using a
+            rig with two mobile phones that take time-synchronized photos, yielding train/validation
+            images of the same pose at different viewpoints. We show that our method faithfully
+            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
+            fidelity.
+          </p>
+        </div>
       </div>
     </div>
+    <!--/ Abstract. -->
 
-    <!-- Step 6 End: Add your paper results -->
-
-    <!-- Step 7 Start: Add your paper conclusion -->
-
-    <!-- 
-    Please do not remove below H2 heading tag. Add your HTML code after H2 HTML tag or add text inside P HTML tag. 
-    Remove this step if not applicable
-    -->
-
-    <div class="content-section" id="conclusion">
-      <h2>Conclusion</h2>
-      <p>TODO: Add Conclusion</p>
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
     </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
 
-    <!-- Step 7 End: Add your paper conclusion -->
 
-    <!-- Step 8 Start: Add your paper references -->
+<section class="section">
+  <div class="container is-max-desktop">
 
-    <!-- 
-    Please only edit below between CODE tags - TODOs
-    Remove this step if not applicable
-    -->
+    <div class="columns is-centered">
 
-    <div class="bibtex-section" id="bibtex">
-      <h2>BibTeX</h2>
-      <button class="bibtex-copy-button" onclick="copyBibTeX()">
-        Copy to Clipboard
-      </button>
-      <pre>
-        <!-- Please edit only below details -->
-        <code class="language-bibtex">
-          @inproceedings{TODO: YourPaperCitation,
-            title={TODO: Paper Title},
-            author={[TODO: Author Names]},
-            booktitle={[TODO: Conference Name]},
-            year={TODO: 2024},
-            pages={[pages]}
-          }
-        </code>
-      </pre>
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Visual Effects</h2>
+          <p>
+            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
+            would be impossible without nerfies since it would require going through a wall.
+          </p>
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dollyzoom-stacked.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!--/ Visual Effects. -->
+
+      <!-- Matting. -->
+      <div class="column">
+        <h2 class="title is-3">Matting</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              As a byproduct of our method, we can also solve the matting problem by ignoring
+              samples that fall outside of a bounding box during rendering.
+            </p>
+            <video id="matting-video" controls playsinline height="100%">
+              <source src="./static/videos/matting.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
     </div>
+    <!--/ Matting. -->
 
-    <!-- Step 8 End: Add your paper references -->
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Animation</h2>
 
-    <!-- Step 9 Start: Add your paper acknowledgement -->
+        <!-- Interpolating. -->
+        <h3 class="title is-4">Interpolating states</h3>
+        <div class="content has-text-justified">
+          <p>
+            We can also animate the scene by interpolating the deformation latent codes of two input
+            frames. Use the slider here to linearly interpolate between the left frame and the right
+            frame.
+          </p>
+        </div>
+        <div class="columns is-vcentered interpolation-panel">
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_start.jpg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+            <p>Start Frame</p>
+          </div>
+          <div class="column interpolation-video-column">
+            <div id="interpolation-image-wrapper">
+              Loading...
+            </div>
+            <input class="slider is-fullwidth is-large is-info"
+                   id="interpolation-slider"
+                   step="1" min="0" max="100" value="0" type="range">
+          </div>
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_end.jpg"
+                 class="interpolation-image"
+                 alt="Interpolation end reference image."/>
+            <p class="is-bold">End Frame</p>
+          </div>
+        </div>
+        <br/>
+        <!--/ Interpolating. -->
 
-    <!-- 
-    Please do not remove below H2 heading tag. Add your HTML code after H2 HTML tag or add text inside P HTML tag. 
-    Remove this step if not applicable
-    -->
+        <!-- Re-rendering. -->
+        <h3 class="title is-4">Re-rendering the input video</h3>
+        <div class="content has-text-justified">
+          <p>
+            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
+            viewpoint such as a stabilized camera by playing back the training deformations.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 width="75%">
+            <source src="./static/videos/replay.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--/ Re-rendering. -->
 
-    <div class="content-section" id="acknowledgement">
-      <h2>Acknowledgement</h2>
-      <p>TODO: Add Acknowledgement if applicable or remove this</p>
+      </div>
     </div>
+    <!--/ Animation. -->
 
-    <!-- Step 9 End: Add your paper acknowledgement -->
 
-    <div class="footer">
-      <!-- Step 10 Start: Edit footer -->
-      <p>© 2024 [TODO: Add Name or University]. All rights reserved.</p>
-      <!-- Step 10 End: Edit footer -->
-      <!-- Please do not remove below code. -->
-      <p>
-        Website template free to borrow from
-        <a
-          href="https://github.com/indramal/iNdra-GitHub-Page-Template-For-Resarch"
-          >here</a
-        >.
-      </p>
-       <div>
-          <!-- Please remove below code of page count or edit indragithubpagetemplate with your name. -->
-    <img src="https://profile-counter.glitch.me/indragithubpagetemplate/count.svg" alt="Profile Counter">
-</div>
+    <!-- Concurrent Work. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Links</h2>
 
-    <!-- Do not edit below button -->
-    <button class="scrollUpBtn" id="scrollUpBtn" onclick="scrollToTop()">
-      ⬆
-    </button>
+        <div class="content has-text-justified">
+          <p>
+            There's a lot of excellent work that was introduced around the same time as ours.
+          </p>
+          <p>
+            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
+          </p>
+          <p>
+            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
+            both use deformation fields to model non-rigid scenes.
+          </p>
+          <p>
+            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
+          </p>
+          <p>
+            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Concurrent Work. -->
 
-    <script src="script.js"></script>
-  </body>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
 </html>
