@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="PLATO Hand: Shaping Contact Behavior with Fingernails for Precise Manipulation">
+  <meta name="keywords" content="PLATO Hand, Robotic Hand, Dexterous Manipulation, Fingernail, Contact Mechanics">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PLATO Hand: Shaping Contact Behavior with Fingernails for Precise Manipulation</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://yourlab.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://yourlab.com/project1">
+            Project 1
+          </a>
+          <a class="navbar-item" href="https://yourlab.com/project2">
+            Project 2
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">PLATO Hand: Shaping Contact Behavior with Fingernails for Precise Manipulation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="#">Author 1</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="#">Author 2</a><sup>1,2</sup>,</span>
+            <span class="author-block">
+              <a href="#">Author 3</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="#">Author 4</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="#">Author 5</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="#">Author 6</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University Name 1,</span>
+            <span class="author-block"><sup>2</sup>University Name 2</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/xxxx.xxxxx"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/xxxx.xxxxx"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://youtu.be/G3mxhdVkClc"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/yourlab/plato-hand"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">PLATO Hand</span> 
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/paper_singulation.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/coin_picking.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/card_picking.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/lid_opening.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/orange_peeling.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/card_flipping.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            This paper introduces the PLATO Hand, a dexterous robotic hand with a hybrid fingertip that embeds a rigid fingernail within a compliant pulp. This design shapes contact behavior to enable diverse interaction modes across a range of object geometries. We develop a strain-energy-based bending–indentation model to guide the fingertip design and to explain how guided contact preserves local indentation while suppressing global bending. Experimental results show that the proposed robotic hand demonstrates improved pinching stability, enhanced force observability, and successful execution of edge-sensitive manipulation tasks, including paper singulation, card picking, and orange peeling. Together, these results show that coupling structured contact geometry with force-motion transparent mechanism provides a principled, physically-embodied approach to precise manipulation.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/G3mxhdVkClc?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Design Overview. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Design Overview</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            The PLATO Hand combines a hybrid fingertip with proprioceptive actuation for high-bandwidth force-regulated interaction. The fingertip integrates a rigid fingernail within a compliant pulp, separating local contact compliance from global fingertip stiffness. This enables fluid transitions between precise force control and adaptive grasping.
+          </p>
+        </div>
+        
+        <div class="columns is-vcentered">
+          <div class="column">
+            <img src="./static/images/design_overview.jpg"
+                 alt="PLATO Hand Design"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Design Overview. -->
+
+    <hr>
+
+    <!-- Energy Model. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Strain-Energy Model</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            We develop an energy-based model that partitions fingertip deformation into global bending and local indentation. The model reveals how material stiffness and contact curvature govern deformation distribution. Higher fingernail stiffness drives deformation into local indentation, enhancing contact stability and force transmission.
+          </p>
+        </div>
+
+        <div class="columns is-vcentered">
+          <div class="column">
+            <img src="./static/images/energy_model.jpg"
+                 alt="Energy Model"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Energy Model. -->
+
+    <hr>
+
+    <!-- Experiments. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Experimental Results</h2>
+
+        <!-- Pinching Stability -->
+        <h3 class="title is-4">Pinching Stability</h3>
+        <div class="content has-text-justified">
+          <p>
+            Pull-out experiments demonstrate 23–78% improvement in pinching stability across planar and curved surfaces. The fingernail consistently increases maximum pull-out force, with effects more pronounced on curved geometries.
+          </p>
+        </div>
+        
+        <div class="columns is-vcentered">
+          <div class="column">
+            <video autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/pinching_stability.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <!-- Force Sensing -->
+        <h3 class="title is-4">Force Sensing</h3>
+        <div class="content has-text-justified">
+          <p>
+            The hybrid fingertip exhibits 8 dB increase at low frequencies and over 20 dB at high frequencies during texture sensing. Proprioceptive force estimation tracks distal measurements with errors below 5% during high-speed impacts.
+          </p>
+        </div>
+
+        <div class="columns is-vcentered">
+          <div class="column">
+            <video autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/force_sensing.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <!-- Manipulation Tasks -->
+        <h3 class="title is-4">Manipulation Tasks</h3>
+        <div class="content has-text-justified">
+          <p>
+            Edge-sensitive tasks achieve over 80% success with the fingernail but fail completely without it. Evaluated tasks include paper singulation, coin picking, card picking, card flipping, lid opening, and orange peeling.
+          </p>
+        </div>
+
+        <div class="columns is-vcentered">
+          <div class="column">
+            <video autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/manipulation_tasks.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--/ Experiments. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{anonymous2025plato,
+  author    = {Anonymous Authors},
+  title     = {PLATO Hand: Shaping Contact Behavior with Fingernails for Precise Manipulation},
+  journal   = {Submitted},
+  year      = {2025},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/plato_hand_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/yourlab" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
