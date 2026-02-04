@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="PLATO Hand: Shaping Contact Behavior with Fingernails for Precise Manipulation">
+  <meta name="keywords" content="PLATO Hand, Robotic Hand, Dexterous Manipulation, Fingernail, Contact Mechanics">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PLATO Hand: Shaping Contact Behavior with Fingernails for Precise Manipulation</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="../static/css/bulma.min.css">
+  <link rel="stylesheet" href="../static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="../static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="../static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="../static/css/index.css">
+  <link rel="icon" href="../static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="../static/js/fontawesome.all.min.js"></script>
+  <script src="../static/js/bulma-carousel.min.js"></script>
+  <script src="../static/js/bulma-slider.min.js"></script>
+  <script src="../static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <!-- <a class="navbar-item" href="https://yourlab.com"> -->
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <!-- <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://yourlab.com/project1">
+            Project 1
+          </a>
+          <a class="navbar-item" href="https://yourlab.com/project2">
+            Project 2
+          </a>
+        </div>
+      </div> -->
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">PLATO Hand: Shaping Contact Behavior with Fingernails for Precise Manipulation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="#">Anonymous Author</a><sup>1</sup>,</span>
+            <!-- <span class="author-block">
+              <a href="#">Author 2</a><sup>1,2</sup>,</span>
+            <span class="author-block">
+              <a href="#">Author 3</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="#">Author 4</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="#">Author 5</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="#">Author 6</a><sup>1</sup>
+            </span> -->
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <!-- <span class="author-block"><sup>1</sup>University Name 1,</span>
+            <span class="author-block"><sup>2</sup>University Name 2</span> -->
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/pdf/xxxx.xxxxx"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/abs/xxxx.xxxxx"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://youtu.be/G3mxhdVkClc"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/yourlab/plato-hand"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a> -->
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline controls height="100%">
+        <source src="../static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <!-- <span class="dnerf">PLATO Hand</span>  -->
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="../static/videos/paper_singulation.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="../static/videos/coin_picking.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="../static/videos/card_picking.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="../static/videos/lid_opening.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="../static/videos/orange_peeling.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="../static/videos/card_flipping.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We introduces the PLATO Hand, a dexterous robotic hand with a hybrid fingertip that embeds a rigid fingernail within a compliant pulp. This design shapes contact behavior to enable diverse interaction modes across a range of object geometries. We develop a strain-energy-based bending–indentation model to guide the fingertip design and to explain how guided contact preserves local indentation while suppressing global bending. Experimental results show that the proposed robotic hand demonstrates improved pinching stability, enhanced force observability, and successful execution of edge-sensitive manipulation tasks, including paper singulation, card picking, and orange peeling. Together, these results show that coupling structured contact geometry with force-motion transparent mechanism provides a principled, physically-embodied approach to precise manipulation.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/G3mxhdVkClc?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Design Overview -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Design Overview</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            The PLATO Hand combines a hybrid rigid-soft fingertip with quasi-direct drive (QDD) actuators and linkage mechanism.
+            The fingernail not only increases flexural rigidity at the fingertip, stabilizing the soft pulp to enlarge contact area for adaptive and stable grasping,
+            but also provides a rigid and concentrated  contact point for transparent force transmission.
+            Combined with high-bandwidth proprioceptive actuation, the PLATO Hand achieves precise dexterous manipulation across a variety of challenging tasks.
+          </p>
+        </div>
+
+        <div class="columns is-vcentered">
+          <div class="column has-text-centered">
+            <img src="../static/images/overview.png"
+                 alt="PLATO Hand Design"/>
+          </div>
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
+          The PLATO Hand employs a biomimetic fingertip that combines a rigid fingernail with a compliant, deformable fingerpulp to structure local contact mechanics.
+          This hybrid construction separates local contact compliance from global fingertip stiffness, allowing deformation during contact to be shaped independently of overall rigidity.
+          </p>
+        </div>
+
+        <div class="columns is-vcentered">
+          <div class="column has-text-centered">
+            <img src="../static/images/deform.png"
+                 alt="Fingertip With vs Without Fingernail"
+                 style="width: 50%;"/>
+          </div>
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
+            The fingernail improves pinching stability by stabilizing contact during pullout. 
+            Tests on flat, concave, and convex surfaces showed that fingertips with a rigid fingernail (top) consistently achieved higher pullout forces than fingertips without one (bottom). 
+            The fingernail prevents the fingertip from bending by redirecting strain energy into local indentation to its pulp, which helps maintain stable contact with the object. 
+            This effect is especially noticeable on curved surfaces and becomes even more important when the fingertip pulp is softer.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Mechanism Design. -->
+
+  </div>
+</section>
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{anonymous2025plato,
+  author    = {Anonymous Authors},
+  title     = {PLATO Hand: Shaping Contact Behavior with Fingernails for Precise Manipulation},
+  journal   = {Submitted},
+  year      = {2025},
+}</code></pre>
+  </div>
+</section> -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Manipulation Demo</h2>
+
+    <div class="columns is-vcentered">
+      <div class="column has-text-centered">
+        <img src="../static/images/taxonomy.png" alt="Manipulation Taxonomy" style="width:80%; max-width:900px; display:block; margin:0 auto;" />
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            The PLATO Hand is able to achieve most tasks in the Grasp Taxonomy using three fingers; the
+            inclusion of rigid fingernails extends its capabilities for precise manipulation tasks.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-multiline is-variable is-2">
+      <div class="column is-one-third">
+        <h4 class="title is-5">Contact/Collision Compliance</h4>
+        <video autoplay muted loop playsinline controls style="width:100%">
+          <source src="../static/videos/demo_compliance.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="column is-one-third">
+        <h4 class="title is-5">Flicking Object</h4>
+        <video autoplay muted loop playsinline controls style="width:100%">
+          <source src="../static/videos/demo_flick.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      
+      
+      <div class="column is-one-third">
+        <h4 class="title is-5">Texture Sensing</h4>
+        <video autoplay muted loop playsinline controls style="width:100%">
+          <source src="../static/videos/demo_tactile_sensing.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="column is-one-third">
+        <h4 class="title is-5">Catching Object</h4>
+        <video autoplay muted loop playsinline controls style="width:100%">
+          <source src="../static/videos/demo_catching.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="column is-one-third">
+        <h4 class="title is-5">Edge Insertion Manipulation</h4>
+        <video autoplay muted loop playsinline controls style="width:100%">
+          <source src="../static/videos/demo_edge_insertion.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="column is-one-third">
+        <h4 class="title is-5">Contact-rich Manipulation</h4>
+        <video autoplay muted loop playsinline controls style="width:100%">
+          <source src="../static/videos/demo_precise.mp4" type="video/mp4">
+        </video>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <!-- <a class="icon-link"
+         href="../static/videos/plato_hand_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/yourlab" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a> -->
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This website has been modified from <a
+              href="https://github.com/nerfies/nerfies.github.io"> Nerfies website</a> ,
+            
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
