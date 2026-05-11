@@ -252,44 +252,6 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3 has-text-centered">Key Findings</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            The PLATO Hand uses the fingernail as a structural contact-shaping element, not just as a rigid tip for picking thin objects. The fingernail and embedded distal phalanx suppress global fingertip bending, while the compliant pulp remains available for local indentation and stable contact formation.
-          </p>
-        </div>
-
-        <div class="columns is-multiline">
-          <div class="column is-one-third">
-            <h4 class="title is-5">Stable Pinching</h4>
-            <p>
-              In lateral pinch, the combined distal phalanx and fingernail design improves pull-out force by 108% over the fingernail-only fingertip on flat objects, and by 153%, 126%, and 116% over the pulp-only fingertip on flat, concave, and convex objects.
-            </p>
-          </div>
-          <div class="column is-one-third">
-            <h4 class="title is-5">Force Observability</h4>
-            <p>
-              Nail-mediated dorsal contact transmits contact-induced force variations more clearly through the fingertip, helping proprioceptive force estimates track rapid impacts and texture interactions.
-            </p>
-          </div>
-          <div class="column is-one-third">
-            <h4 class="title is-5">Edge-Sensitive Tasks</h4>
-            <p>
-              With the fingernail, PLATO completes paper singulation, coin picking, card picking, card flipping, lid opening, and orange peeling trials that often fail when the fingertip only has the embedded distal phalanx.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="container is-max-desktop">
     <div class="has-text-centered">
       <h2 class="title is-3" style="margin-bottom: 2rem;">Manipulation Demo</h2>
     </div>
@@ -345,6 +307,44 @@
         <p style="margin-top: 1rem; margin-bottom: 2rem; min-height: 4.5em;">Precision tasks such as coin picking combine proprioceptive force control with fingernail sensing for simultaneous contact detection and force regulation.</p>
       </div>
 
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Key Findings</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            The PLATO Hand uses the fingernail as a structural contact-shaping element, not just as a rigid tip for picking thin objects. The fingernail and embedded distal phalanx suppress global fingertip bending, while the compliant pulp remains available for local indentation and stable contact formation.
+          </p>
+        </div>
+
+        <div class="columns is-multiline">
+          <div class="column is-one-third">
+            <h4 class="title is-5">Stable Pinching</h4>
+            <p>
+              In lateral pinch, the combined distal phalanx and fingernail design improves pull-out force by 108% over the fingernail-only fingertip on flat objects, and by 153%, 126%, and 116% over the pulp-only fingertip on flat, concave, and convex objects.
+            </p>
+          </div>
+          <div class="column is-one-third">
+            <h4 class="title is-5">Force Observability</h4>
+            <p>
+              Nail-mediated dorsal contact transmits contact-induced force variations more clearly through the fingertip, helping proprioceptive force estimates track rapid impacts and texture interactions.
+            </p>
+          </div>
+          <div class="column is-one-third">
+            <h4 class="title is-5">Edge-Sensitive Tasks</h4>
+            <p>
+              With the fingernail, PLATO completes paper singulation, coin picking, card picking, card flipping, lid opening, and orange peeling trials that often fail when the fingertip only has the embedded distal phalanx.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -415,6 +415,50 @@
     </div>
     <!--/ Mechanism Design. -->
 
+  </div>
+</section>
+
+
+<section class="section" id="technical-details">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Technical Details</h2>
+
+        <div class="content has-text-justified">
+          <h3 class="title is-4">Pull-Out Evaluation</h3>
+          <p>
+            To isolate how fingertip structure changes grasp stability, we compared four fingertip architectures: pulp-only, distal-phalanx-only, fingernail-only, and the combined distal phalanx plus fingernail design. Pull-out tests were performed on flat, concave, and convex objects under index-pinch and lateral-pinch configurations. The combined design produced the strongest and most consistent lateral-pinch performance across object geometries.
+          </p>
+        </div>
+        <img src="./static/images/fig_pullout.jpg"
+             alt="Pull-out evaluation across fingertip architectures and object geometries"
+             loading="lazy"
+             style="width: 100%; display: block; margin: 1rem auto 2.5rem;"/>
+
+        <div class="content has-text-justified">
+          <h3 class="title is-4">Dorsal-Contact Force Transmission</h3>
+          <p>
+            The rigid fingernail also improves how contact-induced force variations propagate through the fingertip. During texture tracing, the combined fingertip transmits higher spectral energy than the distal-phalanx-only fingertip. During repeated dorsal impacts, proprioceptive force estimates derived from motor current closely track distal force-torque measurements, showing that nail-mediated contact remains observable through the low-impedance finger mechanism.
+          </p>
+        </div>
+        <img src="./static/images/fig_sense.jpg"
+             alt="Dorsal-contact force transmission and proprioceptive force estimation"
+             loading="lazy"
+             style="width: 100%; display: block; margin: 1rem auto 2.5rem;"/>
+
+        <div class="content has-text-justified">
+          <h3 class="title is-4">Manipulation Validation</h3>
+          <p>
+            We further validated the hand on edge-sensitive and contact-rich manipulation tasks. Compared with the distal-phalanx-only fingertip, the fingernail-equipped fingertip improves repeatable contact initiation and edge stabilization for paper singulation, lid opening, orange peeling, coin picking, card picking, and card flipping.
+          </p>
+        </div>
+        <img src="./static/images/fig_valid.png"
+             alt="Manipulation task validation with edge-sensitive and contact-rich tasks"
+             loading="lazy"
+             style="width: 100%; display: block; margin: 1rem auto 0;"/>
+      </div>
+    </div>
   </div>
 </section>
 
