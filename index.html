@@ -52,11 +52,6 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <!-- <a class="navbar-item" href="https://yourlab.com"> -->
-      <!-- <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a> -->
 
       <!-- <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
@@ -83,51 +78,58 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">PLATO Hand: Shaping Contact Behavior with Fingernails for Precise Manipulation</h1>
+          <p class="is-size-5 has-text-weight-semibold" style="margin-bottom: 0.75rem;">
+            Accepted to IEEE Robotics and Automation Letters (RA-L), May 2026
+          </p>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="#">Anonymous Author</a><sup>1</sup>,</span>
-            <!-- <span class="author-block">
-              <a href="#">Author 2</a><sup>1,2</sup>,</span>
+              <a href="https://dokkev.github.io">Dong Ho Kang</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="#">Author 3</a><sup>1</sup>,
+              <a href="https://www.aaronjkim.com/">Aaron Kim</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://mingyoseo.com/">Mingyo Seo</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="#">Author 4</a><sup>1</sup>,
+              <a href="https://www.linkedin.com/in/kazuto-yokoyama-436a69360/?originalSubdomain=jp">Kazuto Yokoyama</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="#">Author 5</a><sup>2</sup>,
+              <a href="https://www.linkedin.com/in/tetsuya-narita-9a19a215/?originalSubdomain=jp">Tetsuya Narita</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="#">Author 6</a><sup>1</sup>
-            </span> -->
+              <a href="https://www.ae.utexas.edu/people/faculty/faculty-directory/sentis/">Luis Sentis</a><sup>1</sup>
+            </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <!-- <span class="author-block"><sup>1</sup>University Name 1,</span>
-            <span class="author-block"><sup>2</sup>University Name 2</span> -->
+            <span class="author-block"><sup>1</sup><a href="https://sites.utexas.edu/hcrl/">The University of Texas at Austin</a></span>
+            <span class="author-block"><sup>2</sup><a href="https://www.sony.co.jp/en/">Sony Group Corporation</a></span>
+          </div>
+          
+          <div class="is-size-6 publication-authors" style="margin-top: 10px;">
+            <span class="author-block">Email: <a href="mailto:dongho@utexas.edu">dongho@utexas.edu</a></span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
-              <!-- <span class="link-block">
-                <a href="https://arxiv.org/pdf/xxxx.xxxxx"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span> -->
-              <!-- <span class="link-block">
-                <a href="https://arxiv.org/abs/xxxx.xxxxx"
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2602.05156"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
                   <span>arXiv</span>
                 </a>
-              </span> -->
+              </span>
+              <span class="link-block">
+                <a href="./static/docs/PLATO_RAL%20_appendix.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Appendix</span>
+                </a>
+              </span>
               <!-- Video Link. -->
               <!-- <span class="link-block">
                 <a href="https://youtu.be/G3mxhdVkClc"
@@ -146,8 +148,8 @@
                       <i class="fab fa-github"></i>
                   </span>
                   <span>Code</span>
-                  </a> -->
-              </span>
+                </a>
+              </span> -->
             </div>
 
           </div>
@@ -226,7 +228,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We introduces the PLATO Hand, a dexterous robotic hand with a hybrid fingertip that embeds a rigid fingernail within a compliant pulp. This design shapes contact behavior to enable diverse interaction modes across a range of object geometries. We develop a strain-energy-based bending–indentation model to guide the fingertip design and to explain how guided contact preserves local indentation while suppressing global bending. Experimental results show that the proposed robotic hand demonstrates improved pinching stability, enhanced force observability, and successful execution of edge-sensitive manipulation tasks, including paper singulation, card picking, and orange peeling. Together, these results show that coupling structured contact geometry with force-motion transparent mechanism provides a principled, physically-embodied approach to precise manipulation.
+            We present the PLATO Hand, a dexterous robotic hand with a hybrid fingertip that combines a rigid fingernail, an embedded distal phalanx, and a compliant pulp. Instead of treating the fingertip as a passive soft pad, the design mechanically shapes how contact is initiated, supported, and transmitted during manipulation. We develop a strain-energy-based bending-indentation model that explains how material stiffness and contact geometry partition fingertip deformation between global bending and local indentation. Experiments show improved pinch stability, more observable contact-induced force variations, and reliable execution of edge-sensitive tasks such as paper singulation, card picking, and orange peeling. Together, these results show that coupling a structured contact interface with a force-motion-transparent finger mechanism provides a principled approach to precise manipulation.
           </p>
         </div>
       </div>
@@ -258,7 +260,7 @@
       <div class="column is-half">
         <h4 class="title is-5">Contact/Collision Compliance</h4>
         <video autoplay muted loop playsinline controls style="width:100%">
-          <source src="../static/videos/demo_compliance.mp4" type="video/mp4">
+          <source src="./static/videos/demo_compliance.mp4" type="video/mp4">
         </video>
         <p style="margin-top: 1rem; margin-bottom: 2rem; min-height: 4.5em;">Passive compliance through backdrivable quasi-direct drive actuators enables safe and adaptive responses to unexpected contact forces.</p>
       </div>
@@ -266,7 +268,7 @@
       <div class="column is-half">
         <h4 class="title is-5">Flicking Object</h4>
         <video autoplay muted loop playsinline controls style="width:100%">
-          <source src="../static/videos/demo_flick.mp4" type="video/mp4">
+          <source src="./static/videos/demo_flick.mp4" type="video/mp4">
         </video>
         <p style="margin-top: 1rem; margin-bottom: 2rem; min-height: 4.5em;">High-acceleration strikes achieved through low gear ratios and minimal reflected inertia generate rapid motions to propel objects with controlled impulse.</p>
       </div>
@@ -276,7 +278,7 @@
       <div class="column is-half">
         <h4 class="title is-5">Texture Sensing</h4>
         <video autoplay muted loop playsinline controls style="width:100%">
-          <source src="../static/videos/demo_tactile_sensing.mp4" type="video/mp4">
+          <source src="./static/videos/demo_tactile_sensing.mp4" type="video/mp4">
         </video>
         <p style="margin-top: 1rem; margin-bottom: 2rem; min-height: 4.5em;">High force sensitivity from fingernail sensors identifies surface properties during tactile exploration and probing interactions.</p>
       </div>
@@ -284,7 +286,7 @@
       <div class="column is-half">
         <h4 class="title is-5">Catching Object</h4>
         <video autoplay muted loop playsinline controls style="width:100%">
-          <source src="../static/videos/demo_catching.mp4" type="video/mp4">
+          <source src="./static/videos/demo_catching.mp4" type="video/mp4">
         </video>
         <p style="margin-top: 1rem; margin-bottom: 2rem; min-height: 4.5em;">Fast actuation and low-latency communication enable precise timing and trajectory-based grasping to intercept moving objects.</p>
       </div>
@@ -292,7 +294,7 @@
       <div class="column is-half">
         <h4 class="title is-5">Edge Insertion Manipulation</h4>
         <video autoplay muted loop playsinline controls style="width:100%">
-          <source src="../static/videos/demo_edge_insertion.mp4" type="video/mp4">
+          <source src="./static/videos/demo_edge_insertion.mp4" type="video/mp4">
         </video>
         <p style="margin-top: 1rem; margin-bottom: 2rem; min-height: 4.5em;">Sharp fingernails puncture and manipulate soft surfaces with controlled penetration forces for orange peeling tasks.</p>
       </div>
@@ -300,11 +302,49 @@
       <div class="column is-half">
         <h4 class="title is-5">Contact-rich Manipulation</h4>
         <video autoplay muted loop playsinline controls style="width:100%">
-          <source src="../static/videos/demo_precise.mp4" type="video/mp4">
+          <source src="./static/videos/demo_precise.mp4" type="video/mp4">
         </video>
         <p style="margin-top: 1rem; margin-bottom: 2rem; min-height: 4.5em;">Precision tasks such as coin picking combine proprioceptive force control with fingernail sensing for simultaneous contact detection and force regulation.</p>
       </div>
 
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Key Findings</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            The PLATO Hand uses the fingernail as a structural contact-shaping element, not just as a rigid tip for picking thin objects. The fingernail and embedded distal phalanx suppress global fingertip bending, while the compliant pulp remains available for local indentation and stable contact formation.
+          </p>
+        </div>
+
+        <div class="columns is-multiline">
+          <div class="column is-one-third">
+            <h4 class="title is-5">Stable Pinching</h4>
+            <p>
+              In lateral pinch, the combined distal phalanx and fingernail design improves pull-out force by 108% over the fingernail-only fingertip on flat objects, and by 153%, 126%, and 116% over the pulp-only fingertip on flat, concave, and convex objects.
+            </p>
+          </div>
+          <div class="column is-one-third">
+            <h4 class="title is-5">Force Observability</h4>
+            <p>
+              Nail-mediated dorsal contact transmits contact-induced force variations more clearly through the fingertip, helping proprioceptive force estimates track rapid impacts and texture interactions.
+            </p>
+          </div>
+          <div class="column is-one-third">
+            <h4 class="title is-5">Edge-Sensitive Tasks</h4>
+            <p>
+              With the fingernail, PLATO completes paper singulation, coin picking, card picking, card flipping, lid opening, and orange peeling trials that often fail when the fingertip only has the embedded distal phalanx.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -320,16 +360,16 @@
 
         <div class="content has-text-justified">
           <p>
-            The PLATO Hand combines a hybrid rigid-soft fingertip with quasi-direct drive (QDD) actuators and linkage mechanism.
+            The PLATO Hand combines a hybrid rigid-soft fingertip with quasi-direct drive (QDD) actuators and a linkage mechanism.
             The fingernail not only increases flexural rigidity at the fingertip, stabilizing the soft pulp to enlarge contact area for adaptive and stable grasping,
-            but also provides a rigid and concentrated  contact point for transparent force transmission.
+            but also provides a rigid and concentrated contact point for transparent force transmission.
             Combined with high-bandwidth proprioceptive actuation, the PLATO Hand achieves precise dexterous manipulation across a variety of challenging tasks.
           </p>
         </div>
 
         <div class="columns is-vcentered">
           <div class="column has-text-centered">
-            <img src="../static/images/overview.png"
+            <img src="./static/images/overview.png"
                  alt="PLATO Hand Design"/>
           </div>
         </div>
@@ -338,12 +378,13 @@
           <p>
           The PLATO Hand employs a biomimetic fingertip that combines a rigid fingernail with a compliant, deformable fingerpulp to structure local contact mechanics.
           This hybrid construction separates local contact compliance from global fingertip stiffness, allowing deformation during contact to be shaped independently of overall rigidity.
+          The bending-indentation model explains this design goal: the fingertip should resist folding around the object while still allowing the pulp to indent locally and form a stable contact patch.
           </p>
         </div>
 
         <div class="columns is-vcentered">
           <div class="column has-text-centered">
-            <img src="../static/images/deform.png"
+            <img src="./static/images/deform.png"
                  alt="Fingertip With vs Without Fingernail"
                  style="width: 50%;"/>
           </div>
@@ -378,11 +419,68 @@
 </section>
 
 
+<section class="section" id="technical-details">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Technical Details</h2>
+
+        <div class="content has-text-justified">
+          <h3 class="title is-4">Design Validation</h3>
+          <p>
+            The fingertip design is validated through an energy-based bending-indentation analysis and linkage workspace characterization. The fingernail and distal phalanx shift the neutral axis and increase effective bending rigidity, which concentrates deformation into local pulp indentation rather than global fingertip bending. The optimized linkage also maintains a useful fingertip workspace while reducing mechanical-advantage variation for more consistent force transmission.
+          </p>
+        </div>
+        <img src="./static/images/fig_valid.png"
+             alt="Energy-based fingertip design validation and linkage workspace characterization"
+             loading="lazy"
+             style="width: 100%; display: block; margin: 1rem auto 2.5rem;"/>
+
+        <div class="content has-text-justified">
+          <h3 class="title is-4">Pull-Out Evaluation</h3>
+          <p>
+            To isolate how fingertip structure changes grasp stability, we compared four fingertip architectures: pulp-only, distal-phalanx-only, fingernail-only, and the combined distal phalanx plus fingernail design. Pull-out tests were performed on flat, concave, and convex objects under index-pinch and lateral-pinch configurations. The combined design produced the strongest and most consistent lateral-pinch performance across object geometries.
+          </p>
+        </div>
+        <img src="./static/images/fig_pullout.jpg"
+             alt="Pull-out evaluation across fingertip architectures and object geometries"
+             loading="lazy"
+             style="width: 100%; display: block; margin: 1rem auto 2.5rem;"/>
+
+        <div class="content has-text-justified">
+          <h3 class="title is-4">Dorsal-Contact Force Transmission</h3>
+          <p>
+            The rigid fingernail also improves how contact-induced force variations propagate through the fingertip. During texture tracing, the combined fingertip transmits higher spectral energy than the distal-phalanx-only fingertip. During repeated dorsal impacts, proprioceptive force estimates derived from motor current closely track distal force-torque measurements, showing that nail-mediated contact remains observable through the low-impedance finger mechanism.
+          </p>
+        </div>
+        <img src="./static/images/fig_sense.jpg"
+             alt="Dorsal-contact force transmission and proprioceptive force estimation"
+             loading="lazy"
+             style="width: 100%; display: block; margin: 1rem auto 0;"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{kang2026platohand,
+  author    = {Kang, Dong Ho and Kim, Aaron and Seo, Mingyo and Yokoyama, Kazuto and Narita, Tetsuya and Sentis, Luis},
+  title     = {PLATO Hand: Shaping Contact Behavior with Fingernails for Precise Manipulation},
+  journal   = {IEEE Robotics and Automation Letters},
+  year      = {2026},
+  note      = {Accepted May 2026},
+}</code></pre>
+  </div>
+</section>
+
 <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
       <!-- <a class="icon-link"
-         href="../static/videos/plato_hand_paper.pdf">
+         href="./static/videos/plato_hand_paper.pdf">
         <i class="fas fa-file-pdf"></i>
       </a>
       <a class="icon-link" href="https://github.com/yourlab" class="external-link" disabled>
